@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+        latex:
+                build:
+                        context: .
+                        dockerfile: Dockerfile
+                        args:
+                                - NAME=doc.tex
+                                - CONFIG=config.env
+                volumes:
+                        - ${PWD}:/root/ans:Z

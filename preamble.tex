@@ -1,0 +1,42 @@
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}		% локализация и переносы
+
+\usepackage{extsizes}				% Возможность сделать 14-й шрифт
+\usepackage{indentfirst}			% Сделать отступ для первого абзаца
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+
+\usepackage{epigraph}				%эпиграф
+\setlength\epigraphwidth{.6\textwidth}
+
+% Секции без номеров (введение, заключение...), вместо section*{}
+\newcommand{\anonsection}[1]{
+	\phantomsection % Корректный переход по ссылкам в содержании
+	\section*{#1}
+	\addcontentsline{toc}{section}{#1}
+}
+
+%%%%%%%%%% Иначе не работают вообще никакие переходы
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\definecolor{linkcolor}{HTML}{799B03} % цвет ссылок
+\definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
+
+\hypersetup{%
+	pdfstartview=FitH,%
+	linkcolor=blue,%
+	citecolor=black,
+	colorlinks=true}
+
+\usepackage{csquotes} % Инструменты для ссылок
+
+\usepackage[backend=biber,bibencoding=utf8,sorting=ynt,maxcitenames=2,style=authoryear,autocite=inline]{biblatex} %Для библиографии
+
+\usepackage[most]{tcolorbox} % для управления цветом
+\definecolor{block-gray}{gray}{0.90} % уровень прозрачности (1 - максимум)
+\newtcolorbox{grayquote}{colback=block-gray,grow to right by=-10mm,grow to left by=-10mm, boxrule=0pt,boxsep=0pt,breakable} % настройки области с изменённым фоном
+
+\usepackage[ruled,vlined]{algorithm2e}
+
+\usepackage{float} %для того, чтобы фиксировать изображение
+\usepackage{url}
