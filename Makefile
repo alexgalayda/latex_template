@@ -4,7 +4,7 @@ include ${CONFIG}
 all: build run
 
 build:
-	latexmk -pdf ${NAME}
+	latexmk -pdf ${NAME}.tex
 run:
 	evince ${NAME}.pdf &
 compose:

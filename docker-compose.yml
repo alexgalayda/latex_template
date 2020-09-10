@@ -2,7 +2,7 @@ version: "3.8"
 services:
         latex:
                 build:
-                        context:  $BUILD_CONTEXT
+                        context: $BUILD_CONTEXT
                         dockerfile: $TEMPLATE_PATH/Dockerfile
                         args:
                                 - NAME=$NAME
