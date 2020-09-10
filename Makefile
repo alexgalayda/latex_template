@@ -8,7 +8,7 @@ build:
 run:
 	evince ${NAME}.pdf &
 compose:
-	docker-compose -f docker-compose.yml up --build
+	docker-compose -f ${COMPOSE_PATH} --env-file ${CONFIG} up --build
 stop:
 	docker-compose down
 docker:
