@@ -2,10 +2,11 @@ version: "3.8"
 services:
         latex:
                 build:
-                        context: .
-                        dockerfile: Dockerfile
+                        context: $BUILD_CONTEXT
+                        dockerfile: $TEMPLATE_PATH/Dockerfile
                         args:
-                                - NAME=doc.tex
-                                - CONFIG=config.env
+                                - NAME=$NAME
+                                - CONFIG=$CONFIG
+                                - PROJECT_PATH=$PROJECT_PATH
                 volumes:
                         - ${PWD}:/root/ans:Z

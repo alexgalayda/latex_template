@@ -4,9 +4,9 @@ include ${CONFIG}
 all: build run
 
 build:
-	latexmk -pdf ${NAME}
+	latexmk -pdf ${NAME}.tex
 run:
-	evince db.pdf &
+	evince ${NAME}.pdf &
 compose:
 	docker-compose -f docker-compose.yml up --build
 stop:
