@@ -1,6 +1,6 @@
 cp Makefile ..
 cp example.env ..
 cp doc.tex ../main.tex
-cp assets ..
-cp sections ..
+cp -r assets ..
+cp -r sections ..
 sed -i 's/config.env/example.env/' ../Makefile
