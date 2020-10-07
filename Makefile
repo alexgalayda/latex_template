@@ -4,7 +4,10 @@ include ${CONFIG}
 all: build run
 
 build:
-	latexmk -pdf ${NAME}.tex
+	pdflatex ${NAME}.tex
+	biber ${NAME}
+	makeglossaries ${NAME}
+	pdflatex ${NAME}.tex
 run:
 	evince ${NAME}.pdf &
 compose:

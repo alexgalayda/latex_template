@@ -1,5 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 \input{preamble}
+\input{glossary}
 \addbibresource{bibliography.bib}
 \title{Шаблон \LaTeX документа}
 \author{Галайда Александр}
@@ -13,5 +14,8 @@
 	Ведь для самых важных дел в принципе лучше времени нет}{Anacondaz - Факап}
 \tableofcontents
 \input{sections/example}
+\gls{CV}
+\clearpage
+\printglossaries
 \printbibliography
 \end{document}
