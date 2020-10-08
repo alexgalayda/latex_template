@@ -15,6 +15,7 @@ COPY $PROJECT_PATH/Makefile Makefile
 COPY $PROJECT_PATH/$NAME.tex $NAME.tex
 COPY $TEMPLATE_PATH/preamble.tex preamble.tex
 COPY $TEMPLATE_PATH/glossary.tex glossary.tex
+COPY $TEMPLATE_PATH/tipa.tex tipa.tex
 COPY $TEMPLATE_PATH/bibliography.bib bibliography.bib
 ADD $PROJECT_PATH/sections ./sections
 ADD $PROJECT_PATH/assets ./assets
