@@ -1,7 +1,9 @@
+.PHONY: all build run compose stop docker clear
 CONFIG=config.env
 include ${CONFIG}
 
-all: build run
+#all: build run
+all: compose
 
 build:
 	pdflatex ${NAME}.tex
@@ -19,3 +21,4 @@ docker:
 	docker run -it -v ${PWD}:/root/ans:Z --rm --name latex_doc latex_img
 clear:
 	rm -f *.aux *.fdb_latexmk *.fls *.log *.out *.synctex.gz *.toc *.bbl *bcf *.blg *.xml *.snm *.nav
+	rm -f *.acn *.acr *.alg *.glg *.glo *.gls *.ist
