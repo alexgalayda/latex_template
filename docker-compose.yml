@@ -9,5 +9,11 @@ services:
                                 - CONFIG=$CONFIG
                                 - PROJECT_PATH=$PROJECT_PATH
                                 - TEMPLATE_PATH=$TEMPLATE_PATH
+                #environment: - JUP_PORT=$JUP_PORT
+                image: ${IMAGE}
+                container_name: ${CONTAINER}
+                tty: true
+                stdin_open: true
+                command: /bin/bash
                 volumes:
                         - ${PWD}:/root/ans:Z

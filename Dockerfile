@@ -10,14 +10,19 @@ RUN apt-get update && apt-get install -y \
 	vim 
 
 WORKDIR /root
-COPY $PROJECT_PATH/$CONFIG $CONFIG
-COPY $PROJECT_PATH/Makefile Makefile
-COPY $PROJECT_PATH/$NAME.tex $NAME.tex
-COPY $TEMPLATE_PATH/preamble.tex preamble.tex
-COPY $TEMPLATE_PATH/glossary.tex glossary.tex
-COPY $TEMPLATE_PATH/tipa.tex tipa.tex
-COPY $TEMPLATE_PATH/bibliography.bib bibliography.bib
-ADD $PROJECT_PATH/sections ./sections
-ADD $PROJECT_PATH/assets ./assets
+ADD $PROJECT_PATH app
+#COPY $PROJECT_PATH/$CONFIG $CONFIG
+#COPY $PROJECT_PATH/Makefile Makefile
+#COPY $PROJECT_PATH/$NAME.tex $NAME.tex
+#ADD $PROJECT_PATH/sections ./sections
+#ADD $PROJECT_PATH/assets ./assets
+
+#COPY $TEMPLATE_PATH/preamble.tex preamble.tex
+#COPY $TEMPLATE_PATH/glossary.tex glossary.tex
+#COPY $TEMPLATE_PATH/tipa.tex tipa.tex
+#COPY $TEMPLATE_PATH/bibliography.bib bibliography.bib
+
 RUN mkdir ./ans
-CMD make build; chmod +777 $NAME.pdf; mv $NAME.pdf ./ans
+WORKDIR ./app
+#CMD make build; chmod +777 $NAME.pdf; mv $NAME.pdf ../ans
+CMD make build; mv $NAME.pdf ../ans

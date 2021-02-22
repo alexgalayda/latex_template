@@ -3,7 +3,7 @@ CONFIG=config.env
 include ${CONFIG}
 
 #all: build run
-all: compose
+all: compose attach
 
 build:
 	pdflatex ${NAME}.tex
@@ -13,7 +13,9 @@ build:
 run:
 	evince ${NAME}.pdf &
 compose:
-	docker-compose -f ${COMPOSE_PATH} --env-file ${CONFIG} up --build
+	docker-compose -f ${COMPOSE_PATH} --env-file ${CONFIG} up --build --detach
+attach:
+	docker attach ${CONTAINER}
 stop:
 	docker-compose down
 docker:
