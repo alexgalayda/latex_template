@@ -1,9 +1,6 @@
 FROM blang/latex:ubuntu
-ARG NAME
-ARG CONFIG
 ARG PROJECT_PATH
 ARG TEMPLATE_PATH
-ENV NAME $NAME
 
 RUN apt-get update && apt-get install -y \
 	biber \
